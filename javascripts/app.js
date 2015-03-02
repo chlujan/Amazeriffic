@@ -14,6 +14,7 @@ var main = function () {
             var $content,
                 $input,
                 $button,
+                $anchor,
                 i;
 
             $(".tabs a span").removeClass("active");
@@ -48,6 +49,10 @@ var main = function () {
                 $content = $("<div>").append($input).append($button);
                /* Alternatively append() allows multiple arguments so the above
                 can be done with $content = $("<div>").append($input, $button); */
+            } else if ($element.parent().is(":nth-child(4)")) {
+            
+                
+                $content = $("<div>");
             }
 
             $("main .content").append($content);
