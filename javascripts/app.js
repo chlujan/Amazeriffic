@@ -14,7 +14,11 @@ var main = function () {
             var $content,
                 $input,
                 $button,
-                $anchor,
+                $demo,
+                $pic1,
+                $pic2,
+                $pic3,
+                $pic4,
                 i;
 
             $(".tabs a span").removeClass("active");
@@ -50,10 +54,19 @@ var main = function () {
                /* Alternatively append() allows multiple arguments so the above
                 can be done with $content = $("<div>").append($input, $button); */
             } else if ($element.parent().is(":nth-child(4)")) {
-            
                 
-                $content = $("<div>");
-            }
+                $demo = $("<script>");
+
+                $demo.text("$('.group').colorbox({rel:'group', slideshow:true});");
+
+                $pic1 = $("<a class='group' href='images/screenshot1.png'>Start SlideShow Demo</a>");
+                $pic2 = $("<a class='group' href='images/screenshot2.png'></a>");
+                $pic3 = $("<a class='group' href='images/screenshot3.png'></a>");
+                $pic4 = $("<a class='group' href='images/screenshot4.png'></a>"); 
+
+		$content = $("<ul>").append($pic1, $pic2, $pic3, $pic4, $demo);
+
+            } 
 
             $("main .content").append($content);
 
